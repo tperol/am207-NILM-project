@@ -1,0 +1,61 @@
+\newcommand{\conclusion}[2]{\vspace*{#2em} \begin{mdframed}[style=MyFrame]{\textbf{#1}}\end{mdframed}}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfdefinestyle{MyFrame}{%
+	linecolor=black,
+	outerlinewidth=2pt,
+	roundcorner=20pt,
+	innertopmargin=0.3\baselineskip,
+	innerbottommargin=0.3\baselineskip,
+	innerrightmargin=5pt,
+	innerleftmargin=5pt,
+	backgroundcolor=black!15!white}
+
+\usepackage[abs]{overpic}
+
+\newcommand{\complist}{%
+	\setlength{\itemsep}{1pt}%
+	\setlength{\parskip}{0pt}%
+	\setlength{\parsep}{0pt}%
+}
+\usepackage{tgschola}
+%\usepackage{tgpagella}
+\usepackage{anyfontsize}
+\usepackage{t1enc}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage[labelfont=bf]{caption}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{epstopdf}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+\usepackage[mathscr]{euscript}
+\usepackage{enumitem}
+
+\setlength{\columnsep}{2em}
+\setlength{\columnseprule}{0mm}
+\definecolor{maroon}{RGB}{255,100,0}
+\allowdisplaybreaks
+\allowbreak
+
+\usepackage{multicol}
+
+\usepackage{todonotes}
+
+\newcommand{\td}[1]{\todo[fancyline, inline,color=red]{#1}}
+%equation command
+\newcommand{\eq}[1]{\begin{equation}#1\end{equation}}
+\newcommand{\eql}[2]{\begin{equation}\label{#2}#1\end{equation}}
+%command for figure
+\newcommand{\fig}[3]{\begin{figure}[H]\centering\includegraphics[scale=#2]{#1}\caption{#3}\end{figure}}
+\newcommand{\figl}[4]{\begin{figure}[H]\centering\includegraphics[scale=#2]{#1}\caption{#3}\label{#4}\end{figure}}
+
+\newenvironment{compitemize}{\begin{itemize}[leftmargin=*] \complist }{\end{itemize}}
+\newenvironment{compenumerate}{\begin{enumerate}[leftmargin=*] \complist }{\end{enumerate}}
+\usepackage{float}
+\floatplacement{figure}{H}
+
+\usepackage{verbatim} 
