@@ -1,0 +1,49 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{natbib}
+\usepackage[hmargin=2cm,vmargin=4cm]{geometry}
+\usepackage{color}
+\usepackage{graphicx,wrapfig,lipsum}
+
+\usepackage{titling}
+
+\setlength{\droptitle}{-11em}   % This is your set screw
+
+\title{Energy Disaggregation using Non-Intrusive Load Monitoring}
+
+\author{Thibaut \textsc{Perol}\\ \small Harvard John A. Paulson School of Engineering and Applied Sciences\\
+\textit{Advisors}: James R. Rice and Marine Denolle}
+\date{}
+\begin{document}
+\maketitle
+
+
+\section{Abstract}
+
+\section{Introduction}
+Energy disaggregation is the procedure that infers the energy consumption of appliances in a household given the total energy consumption from a single meter of that household. In recent years, this field has become increasingly popular as smart meters have begun to deploy and are installed in many households across the world, providing energy consumption data at high temporal resolution. This high resolution data enables the use of computer algorithms to estimate the energy consumption of each appliance in the household without having to install meters on individual appliances (hence, non-intrusive load monitoring). Appliance-specific energy consupmtion information can be provided to homeowners to encourage adoption of energy efficiency habits and identify the appliances that would result in the most cost savings if replaced with more energy efficient ones. From the electric utility's perspective, the appliance specific information can be used for demand-response programs and also provide information about how their customers are using electricity within their homes. 
+
+Research on NILM began in the 1980s with Hart, 1985. In these earlier methods, the patterns in electricity consumption of different appliances were identified by humans and these hand-designed feature extractors were then applied to the aggregate signals. Later works \citep{Kelly} developed methods to automatically identify appliances and perform disaggregation. The technology has also been monetized by several startups (eg. Bidgeley, PlotWatt). 
+
+Several data sets have been released for the purpose of comparing disaggregation methods. The Reference Energy Disaggregation Dataset (REDD) \citep{REDD} was released in 2011 from MIT. It includes data from 6 houses spaning a period of 3-19 days for each house and contains sub-metered (appliance-level) data for each household. The Smart* dataset was released in 2012, with sub-metered data for one household and aggregate data for 3 households over a period of 3 months. Most recently, the UK-DALE datset was released in 2014, with 3-17 months of data for 4 households with appliance-level submeters. Due to the cost and intrusiveness of installing appliance-level meters, these datasets tend to have only a few households or span a short period of time. Additionally, the datasets are differently formatted depending on the research group that collected the data, making comparisons among different datasets difficult.  
+
+In an attempt to standardize comparison of different disaggregation methods, \citet{Batra} released the Non-intrusive Load Monitoring Toolkit (NILMTK). NILMTK is an open-source toolkit that provides tools for data processing and evaluation metrics. NILMTK also provides two benchmark disaggregation algorithms, combinatorial optimization (CO) and factorial hidden markov model (FHMM). 
+
+In this project, we compare a new approach using convolutional neural networks against the standard CO and FHMM implementations in NILMTK. 
+
+\section{Methods}
+\subsection{Combinatorial Optimization}
+\subsection{Factorial Hidden Markov Model}
+
+\subsection{Convolutional Neural Network}
+
+\section{Results}
+
+\section{Conclusion}
+
+
+
+\bibliographystyle{agufull08}
+\bibliography{/Users/thibaut/Dropbox/Biblio/Perol_biblio}
+
+\end{document}
