@@ -32,9 +32,24 @@ In an attempt to standardize comparison of different disaggregation methods, \ci
 In this project, we compare a new approach using convolutional neural networks against the standard CO and FHMM implementations in NILMTK. 
 
 \section{Methods}
+\subsection{Data processing}
 \subsection{Combinatorial Optimization}
 \subsection{Factorial Hidden Markov Model}
+Factorial hidden markov models (FHMM) are an extension to hidden markov models (HMM) where the hidden state is factored into multiple state variables \citep{Ghahraani}. In a hidden markov model, the observed states of the system are the aggregated power consumption of the household. The hidden states are the states of each appliance. This is shown in the diagram below. \\ 
+\includegraphics[width=0.4\textwidth]{../figures/FHMM.pdf}
 
+In the above diagram, $y_t$ is the observed state (aggregate power consumption) at time $t$, $y_t^{(i)}$ is the power consumption of appliance $i$ at time $t$ (used only in training), and $x_t^{(i)}$ is the hidden state of appliance $i$ at time $t$. Since the observed state is continuous, the emission probabilities are modeled with a Gaussian distribution: 
+\[P(y_t|x_t^{(1:N)}) = \mathcal{N} \left(\sum_{i=1}^N \mu^{(i)}, \Sigma \right) \]
+where the mean is the sum of the means of the individual appliances. The transition probabilities can be factored as
+\[P(x_t^{1:N)}|x_{t-1}^{(1:N)}) = \prod_{i=1}^{N} P(x_t^{(i)}|x_{t-1}^{(i)})\]
+and the transition probabilities for each individual appliance follow a multinomial distribution. The model also needs an initial probability distribution, $\pi_0$ which also follows a multinomial probability distribution.  
+
+In the NILMTK implementation, the \verb train_across_buildings  function takes as input the sub-metered data for each house, a list of the appliances we want to train for, and a list of the houses we want to include in the training set. The sub-metered data for each appliance is then combined into an array that includes all training houses. An HMM with Gaussian emissions is built for each appliance using the \verb GaussianHMM  function in the \verb hmmlearn  package. The parameters (transition and emission probabilities) for this HMM is then trained using the \verb fit  function from \verb hmmlearn , which uses expectation-maximization (EM) to find the optimal parameters. In the original NILMTK implementation, there are two hidden states for each appliance to represent on and off states. We show results using this implementation as well as with a third state to represent an intermediate level of power consumption (such as spin vs. fill cycles of a washing machine). 
+
+Once these parameters are fit for all appliances, they are combined to form the FHMM. The FHMM has a hidden state for every possible combination of states. To create the combined emission matrix, the mean power consumption for each appliance is summed (if the fridge comsumes 0.5W while off and 150W while on, and a microwave consumes 3 W while off and 350 W while on, then the states would be 3.5 W for both devices off, 153 W for fridge on, microwave off, 350.5W for fridge off, microwave on, and 500 W for both devices on). To create the combined transition matrix, we take the product of the transition probabilities of individual appliances. A new \verb GaussianHMM  model is created using these combined parameters. 
+
+To disaggregate (infer the hidden states), the \verb predict  function of \verb hmmlearn  is used, which has the option of using the Viterbi algorithm or maximum a posteriori (MAP) to decode the most likely state sequence.  
+ 
 \subsection{Convolutional Neural Network}
 
 \section{Results}
