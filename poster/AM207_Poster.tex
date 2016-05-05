@@ -21,7 +21,7 @@
 		textborder=roundedleft
 }
 {\hspace{2em}\includegraphics[scale=0.35]{IACS}}
-{\bfseries AM207\\[12pt] \textsc{Energy Disaggregation}}
+{\bfseries AM207\\[12pt] \textsc{Energy Disaggregation from Non-Intrusive Load Monitoring}}
 {\vspace{1em}Karen Yu, Nick Vasios, Thibaut Perol}
 {\hspace{-2em}\includegraphics[scale=0.8]{SEAS_S}}
 
@@ -72,7 +72,7 @@ In the context of this project we make use of the REDD data set \cite{REDD}, a p
 % #############################################################################################################
 %----------------------------------------METHODS FOR DISAGGREGATION----------------------------------------
 %
-\begin{posterbox}[column=1, height = bottom]{\LARGE \bfseries Methods For Disaggregation}
+\begin{posterbox}[column=1, height = bottom]{\LARGE \bfseries Methods For Disaggregation (1)}
 \vspace{1em}
 
 % -------------------------- CO (NICK) --------------------------------------------------------------------
@@ -106,7 +106,7 @@ The power demand of every appliance can also be modelled after hidden Markov Mod
 %
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.7\textwidth]{FHMM}
+\includegraphics[width=0.5\textwidth]{FHMM}
 \caption*{\footnotesize  \textbf{Figure}: A typical diagram of the Factorial Hidden Markov Model considered here \cite{REDD}} \vspace*{-1 cm}
 \end{center}
 \end{figure}
@@ -136,12 +136,14 @@ The Computational Cost is $O(TK^{2N})$ where $N$ is the number of appliances, $K
 
 \section*{Convolutional Neural Networks (ConvNet)}
 
+Convolutional Neural Networks are similar to ordinary Neural Networks (multi-layer perceptrons). Each neuron receive an input, perform a dot product with its weights and follow this with a non-linearity (here we only use ReLu). The whole network has a loss function that is here the RMS error. The network implements the 'rectangle method'. From the input sequence we invert for the start time, the end time and the average power of ONE appliance.
+
 \vspace{1em}
 \begin{tabularx}{\linewidth}{X|X}
   \hline
   \bf Pros & \bf Cons \\
   \hline
-  \small Extremely Effective & \small Very difficult to Implement\\
+  \small Quite Effective & \small Difficult to Implement\\
   \small Fast Disaggregation & \small Training is time consuming\\
   \hline
 \end{tabularx}
@@ -150,10 +152,17 @@ The Computational Cost is $O(TK^{2N})$ where $N$ is the number of appliances, $K
 % #############################################################################################################
 %-------------------------------METHODS FOR DISAGGREGATION (CONT'D)----------------------------------------
 %
-\begin{posterbox}[column=2]{\LARGE \bfseries Methods For Disaggregation (Cont'd.)}
+\begin{posterbox}[column=2]{\LARGE \bfseries Methods For Disaggregation (2)}
 % -------------------------- CONV NET (TIBO)---------------------------------------------------------------
-\section*{Convolutional Neural Networks (ConvNet) Cont'd}
+\section*{Convolutional Neural Networks (ConvNet)}
+
 %
+
+
+
+Convolutional neural networks have revolutionized computer vision. From an image the convolutional layer learns through its weights low level features. In the case of an image the features detectors (filters) would be: horizontal lines, blobs etc. These filters are built using a small receptive field and share weights across the entire input, which makes them translation invariant. Similarly, in the case of time series, the filters extract low level feature in the time series. By experimenting we found that only using 16 of these filters gives a good predictive power to the ConvNet. This convolutional layer is then flatten and we use 2 hidden layers of 1024 and 512 neurons with ReLu activation function before the output layer of 3 neurons (start time, end time and average power).
+
+
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.75\textwidth]{convnet_architecture}

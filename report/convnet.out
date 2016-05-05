@@ -1,0 +1,17 @@
+\BOOKMARK [1][-]{section.1}{Convolutional Neural Network \(ConvNet\)}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{ConvNet introduction}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Data pipeline}{section.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Selecting appliances}{subsection.1.2}% 4
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Selecting time sequences}{subsection.1.2}% 5
+\BOOKMARK [3][-]{subsubsection.1.2.3}{Selecting houses}{subsection.1.2}% 6
+\BOOKMARK [3][-]{subsubsection.1.2.4}{Dealing with unbalanced data: selecting aggregated data windows}{subsection.1.2}% 7
+\BOOKMARK [3][-]{subsubsection.1.2.5}{Synthetic aggregated data}{subsection.1.2}% 8
+\BOOKMARK [3][-]{subsubsection.1.2.6}{Standardization of the input data \(aggregated data\)}{subsection.1.2}% 9
+\BOOKMARK [3][-]{subsubsection.1.2.7}{Output data \(start time, end time and average power\)}{subsection.1.2}% 10
+\BOOKMARK [2][-]{subsection.1.3}{Scores}{section.1}% 11
+\BOOKMARK [2][-]{subsection.1.4}{Implementation strategy for real time data augmentation}{section.1}% 12
+\BOOKMARK [2][-]{subsection.1.5}{ConvNet architecture}{section.1}% 13
+\BOOKMARK [2][-]{subsection.1.6}{Loss function and optimizer}{section.1}% 14
+\BOOKMARK [3][-]{subsubsection.1.6.1}{Loss function}{subsection.1.6}% 15
+\BOOKMARK [2][-]{subsection.1.7}{Optimizer}{section.1}% 16
+\BOOKMARK [2][-]{subsection.1.8}{Training and Validation losses}{section.1}% 17

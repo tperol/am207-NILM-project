@@ -1,0 +1,25 @@
+\BOOKMARK [1][-]{section.1}{Abstract}{}% 1
+\BOOKMARK [1][-]{section.2}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.3}{Methods}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Data processing}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Combinatorial Optimization}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Factorial Hidden Markov Model}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{Convolutional Neural Network \(ConvNet\)}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{ConvNet introduction}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{Data pipeline}{section.4}% 9
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Selecting appliances}{subsection.4.2}% 10
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Selecting time sequences}{subsection.4.2}% 11
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Selecting houses}{subsection.4.2}% 12
+\BOOKMARK [3][-]{subsubsection.4.2.4}{Dealing with unbalanced data: selecting aggregated data windows}{subsection.4.2}% 13
+\BOOKMARK [3][-]{subsubsection.4.2.5}{Synthetic aggregated data}{subsection.4.2}% 14
+\BOOKMARK [3][-]{subsubsection.4.2.6}{Standardization of the input data \(aggregated data\)}{subsection.4.2}% 15
+\BOOKMARK [3][-]{subsubsection.4.2.7}{Output data \(start time, end time and average power\)}{subsection.4.2}% 16
+\BOOKMARK [2][-]{subsection.4.3}{Scores}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.4}{Implementation strategy for real time data augmentation}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.5}{ConvNet architecture}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.6}{Loss function and optimizer}{section.4}% 20
+\BOOKMARK [3][-]{subsubsection.4.6.1}{Loss function}{subsection.4.6}% 21
+\BOOKMARK [2][-]{subsection.4.7}{Optimizer}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.8}{Training and Validation losses}{section.4}% 23
+\BOOKMARK [1][-]{section.5}{Results and Discussion}{}% 24
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 25
