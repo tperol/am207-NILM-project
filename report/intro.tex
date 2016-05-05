@@ -33,6 +33,16 @@ In this project, we compare a new approach using convolutional neural networks a
 
 \section{Methods}
 \subsection{Data processing}
+We use the REDD dataset, which contains data aggregated and sub-metered data from 6 houses. We use the functions provided in \verb NILMTK  to read in the data. In the figure below, we show the aggregated energy consumption of a household (building 2) over a 13 day period as well as the times each individual appliance was on during a period of 1 day.\\  
+\includegraphics[width=0.6\paperwidth]{../figures/Site_Meter.pdf}
+
+The data is organized by buildings. Within each building, we can get the electricity meter readings using the \verb .elec  attribute. The \verb .mains  sub-meters refer to the aggregated readings. We can refer to each appliance by giving the appliance as a keyword to \verb data.buildings[building_num].elec[appliance] . Some typical appliances in these households include refrigerators, washter dryers, lights, dish washers, microwaves, and sockets. We decided to use fridge and microwave as the two appliances for which we determine the power consumption because they are used in most households (buildings 1, 2, 3, 5).
+
+The data pipeline is shown in the following diagram \\
+\includegraphics[width=0.6\paperwidth]{../figures/NILM_Data_Pipeline.pdf}
+
+The REDD dataset if first converted to HDF5 format. \verb NILMTK  provides functions to compute statistcs on the dataset as well as preprocessing algorithms. The data from individual meters is then fed into the model for training. After training, the aggregated data can then be fed into the model for disaggregation. \verb NILMTK  also provides functions for computing metrics of how well each disaggregation algorithm performs.
+
 \subsection{Combinatorial Optimization}
 \subsection{Factorial Hidden Markov Model}
 Factorial hidden markov models (FHMM) are an extension to hidden markov models (HMM) where the hidden state is factored into multiple state variables \citep{Ghahraani}. In a hidden markov model, the observed states of the system are the aggregated power consumption of the household. The hidden states are the states of each appliance. This is shown in the diagram below. \\ 
