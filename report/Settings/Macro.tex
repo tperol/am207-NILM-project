@@ -1,0 +1,271 @@
+
+%---------------------------------------------------------------------------
+% Custom Definitions for User Name, Course Code and Title, Instructor, etc.
+%
+\newcommand{\thiscoursecode}{AM 207}
+\newcommand{\thiscoursename}{Advanced Scientific Computing}
+\newcommand{\thiscoursenameb}{Stochastic Methods for Data Analysis, Inference and Optimization}
+\newcommand{\thisprof}{ Verena Kaynig-Fittkau $\&$ Pavlos Protopapas}
+\newcommand{\thistf}{Giri Gopalan}
+\newcommand{\me}{Karen Yu, Nick Vasios, Thibaut Perol}
+\newcommand{\thisterm}{Spring 2016}
+%---------------------------------------------------------------------------
+%###########################################################################
+%---------------------------------------------------------------------------
+%                           Code for the Front Page
+%
+\newcommand{\notefront} {
+\begin{center}
+    \includegraphics[width=2cm]{SEAS_S}\\[8pt]
+    \textbf{\Huge{\thiscoursecode}}{\Huge \\[8pt]}
+    {\large{\noun{\thiscoursename}}}\\[8pt]
+    {\large{\noun{\thiscoursenameb}}}\\[8pt]
+    {{\noun {Harvard John A. Paulson School of Engineering and Applied Sciences}}}
+\end{center}
+}
+%---------------------------------------------------------------------------
+%###########################################################################
+%---------------------------------------------------------------------------
+
+
+\newcommand{\no}{\noindent}
+\newcommand{\pr}{\partial}
+%
+\def\beq#1\eeq{\begin{equation}#1\end{equation}}
+\def\beqa#1\eeqa{\begin{eqnarray}#1\end{eqnarray}}
+\def\beqas#1\eeqas{\begin{eqnarray*}#1\end{eqnarray*}}
+
+\def\blst#1\elst{\begin{lstlisting}#1\end{lstlisting}}
+
+
+
+% Quick Underbrace (Math Mode)
+\newcommand{\ub}[1]{\underbrace{#1}}
+
+% Quick Underbrace with text (Text Mode)
+\newcommand{\ubt}[2]{$\underbrace{\mbox{#1}}_{\mbox{#2}}$}
+
+% Combination Notation (Choose n from p) (Math Mode)
+\newcommand{\comb}[2]{{#1 \choose #2}}
+
+% Easy Piecewise function
+% 1: Case 1
+% 2: Domain for case 1
+% 3: Case 2
+% 4: Domain for case 2
+\newcommand{\piecewise}[4]{\left\{
+     \begin{array}{lr}
+       #1 & \mbox{#2} \\
+       &\\ #3 & \mbox{#4}
+     \end{array}
+   \right.}
+
+% Easy Slanted Text
+\newcommand{\noun}[1]{\textsc{#1}}
+% Easy Text TT
+\newcommand{\tc}[1]{\texttt{#1}}
+
+% Easy <math>
+\newcommand{\sip}[2]{\langle #1 , #2 \rangle}
+
+
+% Small Greek Letter Shortcuts
+\renewcommand\a{\alpha}
+\renewcommand\v{\beta}
+\newcommand\g{\gamma}
+\renewcommand\d{\delta}
+\newcommand\e{\epsilon}
+\newcommand\ve{\varepsilon}
+\def\k{\kappa}
+\renewcommand\l{\lambda}
+\newcommand\ldot{\dot{\lambda}}
+\newcommand\m{\mu}
+\newcommand\s{\sigma}
+\renewcommand\t{\tau}
+\renewcommand\th{\theta}
+\newcommand\z{\zeta}
+\newcommand\om{\omega}
+\newcommand\ups{\upsilon}
+
+% Some Capital Greek Letter Shortcuts
+\newcommand\D{\Delta}
+\newcommand\F{\Phi}
+\renewcommand\L{\Lambda}
+\newcommand\Sig{\Sigma}
+\def\Om{\Omega}
+
+% Bold Symbols for Vectors and Tensors
+\newcommand\baa{\boldsymbol{\alpha}}
+\newcommand\bbe{\boldsymbol{\beta}}
+\newcommand\bfdel{\boldsymbol{\delta}}
+\newcommand\bee{\boldsymbol{\epsilon}}
+\newcommand\bve{\boldsymbol{\varepsilon}}
+\newcommand\bfeta{\boldsymbol{\eta}}
+\newcommand\bkappa{\boldsymbol{\kappa}}
+\newcommand\bmi{\boldsymbol{\mu}}
+\newcommand\bfxi{\boldsymbol{\xi}}
+\newcommand\bs{\boldsymbol{\sigma}}
+\newcommand\bom{\boldsymbol{\omega}}
+\newcommand\bedot{\dot{\boldsymbol{\epsilon}}}
+\newcommand\bGamma{\bf\Gamma}
+\newcommand\bDel{\bf\Delta}
+\newcommand\bPi{\boldsymbol{\Pi}}
+\newcommand\bSig{\boldsymbol\Sigma}
+\newcommand\bPhi{\boldsymbol{\Phi}}
+\newcommand\bOm{\boldsymbol{\Omega}}
+\newcommand\bgrad{\boldsymbol{\nabla}}
+\newcommand\cor{\hat{\bs}}
+\newcommand\ba{{\bf a}}
+\newcommand\bb{{\bf b}}
+\newcommand\bc{{\bf c}}
+\newcommand\bff{{\bf f}}
+\newcommand\bd{{\bf d}}
+\newcommand\be{{\bf e}}
+\newcommand\bg{{\bf g}}
+\newcommand\bh{{\bf h}}
+\newcommand\bj{{\bf j}}
+\newcommand\bk{{\bf k}}
+\newcommand\bl{\boldsymbol{l}}
+\newcommand\bm{{\bf m}}
+\newcommand\bn{{\bf n}}
+\newcommand\bp{{\bf p}}
+\newcommand\br{{\bf r}}
+\newcommand\bx{{\bf x}}
+\newcommand\by{{\bf y}}
+\def\bq{{\bf q}}
+\newcommand\bss{{\bf s}}
+\newcommand\bt{{\bf t}}
+\newcommand\bu{{\bf u}}
+\newcommand\bv{{\bf v}}
+\newcommand\bw{\boldsymbol{w}}
+\newcommand\bups{\boldsymbol{\upsilon}}
+\newcommand\btau{\boldsymbol{\tau}}
+\newcommand\bwv{\{\boldsymbol{w}^{*}\}}
+\newcommand\bwt{\{\boldsymbol{w}\}^T}
+\newcommand\bwvt{\{\boldsymbol{w}^{*}\}^T}
+\newcommand\brho{\boldsymbol{\rho}}
+\newcommand\blam{\boldsymbol{\lambda}}
+\newcommand\bA{{\bf A}}
+\newcommand\bB{{\bf B}}
+\newcommand\bC{{\bf C}}
+\newcommand\bD{{\bf D}}
+\newcommand\bE{{\bf E}}
+\newcommand\bF{{\bf F}}
+\newcommand\bG{{\bf G}}
+\newcommand\bH{{\bf H}}
+\newcommand\bI{{\bf I}}
+\newcommand\bJ{{\bf J}}
+\newcommand\bK{{\bf K}}
+\newcommand\bL{{\bf L}}
+\newcommand\bM{{\bf M}}
+\newcommand\bN{{\bf N}}
+\newcommand\bP{{\bf P}}
+\newcommand\bQ{{\bf Q}}
+\newcommand\bR{{\bf R}}
+\newcommand\bS{{\bf S}}
+\newcommand\bT{{\bf T}}
+\newcommand\bU{{\bf U}}
+\newcommand\bV{{\bf V}}
+\newcommand\bW{{\bf W}}
+\newcommand\bX{{\bf X}}
+\newcommand\bY{{\bf Y}}
+\newcommand\bZ{{\bf Z}}
+\newcommand\bOM{{\bf \Omega}}
+\newcommand\bPsi{{\bf \Psi}}
+\newcommand\bLam{{\bf \Lambda}}
+\newcommand\bzero{{\bf 0}}
+% Other
+\newcommand\Ccal{\mathcal{C}}
+\newcommand\Dcal{\mathcal{D}}
+\newcommand\Ical{\mathcal{I}}
+\newcommand\bLcal{\boldsymbol{\mathcal{L}}}
+\newcommand\bMcal{\boldsymbol{\mathcal{M}}}
+\newcommand\bKcal{\boldsymbol{\mathcal{K}}}
+\newcommand\bJcal{\boldsymbol{\mathcal{J}}}
+\newcommand\bCcal{\boldsymbol{\mathcal{C}}}
+\newcommand\bIcal{\boldsymbol{\mathcal{I}}}
+\newcommand\bDcal{\boldsymbol{\mathcal{D}}}
+\newcommand\Lcal{\mathcal{L}}
+\newcommand\Mcal{\mathcal{M}}
+
+
+\newcommand{\union}{\cup}
+\newcommand{\inter}{\cap}
+
+% Very useful shortcuts for sets
+\newcommand{\nset}[1]{#1_1,\ldots,#1_n}
+\newcommand{\setk}[2]{#1_1,\ldots,#1_#2}
+\newcommand{\bnset}[1]{\{#1_1,\ldots,#1_n\}}
+\newcommand{\bset}[2]{\{#1_1,\ldots,#1_#2\}}
+\newcommand{\ton}[1]{#1=1,\ldots,n}
+\newcommand{\tok}[2]{#1=1,\ldots,#2}
+
+% Operators
+\newcommand{\disc}{\operatorname{disc}}
+\newcommand{\spn}{\operatorname{Span}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\proj}{\operatorname{proj}}
+\newcommand{\prp}{\operatorname{perp}}
+\newcommand{\tran}[1]{#1^\mathrm{T}}
+
+% Underlines
+\newcommand{\ux}{\underline{x}}
+\newcommand{\ua}{\underline{a}}
+\newcommand{\uu}{\underline{u}}
+
+\theoremstyle{definition}
+%\newtheorem{cor}{Corollary}[section]
+\newtheorem*{note}{Note}
+\newtheorem{notation}{Notation}[section]
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem*{solution}{Solution}
+\newtheorem*{ans}{Answer}
+
+\newcommand{\Lp}{\mathcal{L}^p}
+
+\declaretheorem[name=Theorem,
+refname={theorem,theorems},
+Refname={Theorem,Theorems},
+numberwithin=section]{thrm}
+
+\declaretheorem[name=Lemma,
+refname={lemma,lemmas},
+Refname={Lemma,Lemmas},
+numberwithin=section]{lem}
+
+\declaretheorem[name=\color{crimson} Example,
+refname={example,examples},
+Refname={Example,Example},
+numberwithin=section]{exmp}
+
+\declaretheorem[name=Remark,
+refname={remark,remarks},
+Refname={Remark,Remarks},
+numberwithin=section]{rem}
+
+\declaretheorem[name=Proposition,
+refname={proposition,propositions},
+Refname={Proposition,Propositions},
+numberwithin=section]{prop}
+
+\declaretheorem[name=Definition,
+refname={definition,definitions},
+Refname={Definition,Definitions},
+numberwithin=section]{defn}
+
+\newcommand{\Python}
+{
+\begin{flushright}
+  \textit{Python Example}
+\end{flushright}\vspace{-2ex}
+}
+\newcommand{\var}{\mathrm{var}}
+\newcommand{\cov}{\mathrm{cov}}
+
+\DeclareMathOperator*{\Assembly}{\scalerel*{\mathrm{A}}{\Big[}}
+\newcommand*\tick{\item[\Checkmark]} 
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother

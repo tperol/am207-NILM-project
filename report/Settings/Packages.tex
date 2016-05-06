@@ -1,0 +1,95 @@
+\usepackage{tgschola}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage[tmargin=1.0in,bmargin=1.0in,lmargin=0.5in,rmargin=0.5in]{geometry}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{epstopdf}
+\usepackage{framed}
+\usepackage{fancyhdr}
+\usepackage{relsize}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{titlesec,titletoc}
+\usepackage{tabularx}
+\usepackage{bbding}
+\usepackage{enumitem}
+\usepackage{cancel}
+\usepackage[font={small,it}]{caption}
+%\usepackage[figurename=Fig. ]{caption}
+\usepackage{morefloats}
+\usepackage{scalerel}
+\usepackage{ulem}
+\usepackage{makeidx}
+\allowdisplaybreaks
+\graphicspath{{Figures/}}
+\definecolor{special}{rgb}{0.5, 0.5, 0.5}
+\definecolor{special2}{rgb}{0.25, 0.25, 0.25}
+\definecolor{crimson}{rgb}{0.79, 0.0, 0.09}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\usepackage[colorlinks=true,linkcolor=crimson,citecolor=crimson,urlcolor=blue,pageanchor=true]{hyperref}
+\hypersetup{linktocpage=true,
+            pdfstartview=FitV,
+            breaklinks=true,
+            pdfpagemode=UseNone,
+            pdfpagemode=UseOutlines,
+            plainpages=false,
+            bookmarksnumbered,
+            bookmarksopen=true,
+            bookmarksopenlevel=1,
+            hypertexnames=true,
+            pdfhighlight=/O,
+            pdfauthor={Nick Vasios},
+            pdfkeywords={},
+            pdfcreator={pdfTeXify},
+            pdfproducer={LaTeX with hyperref}}
+
+\usepackage{listings}
+\lstset{language=Matlab,
+  morecomment=[l]{!\ }% Comment only with space after !
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.4,0,0.7}
+%\definecolor{backcolour}{rgb}{0.9,0.9,0.9}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.9}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=none,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+
+\titleformat{\chapter}
+  {\LARGE\bfseries\color{crimson}}{\thechapter.}{0.3em}{\color{black}\vspace{-2.5em}}
+\titleformat{\section}
+  {\Large\bfseries\color{crimson}}{\thesection.}{0.3em}{\color{black}\vspace{-1em}}
+\titleformat{\subsection}
+  {\large\bfseries\color{crimson}}{\thesubsection.}{0.3em}{\color{black}\vspace{-.8em}}%
+\titleformat{\subsubsection}
+  {\bfseries\color{crimson}}{\thesubsubsection.}{0.3em}{\color{black}\vspace{-.7em}}
+
+\fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}} 

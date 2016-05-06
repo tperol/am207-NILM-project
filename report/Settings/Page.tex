@@ -1,0 +1,67 @@
+\pagestyle{fancy}
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\parskip 7.2pt
+\parindent 8pt
+\addtolength{\headheight}{3pt}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\alph{subsubsection}}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\nouppercase\rightmark}
+\fancyhead[RE]{\nouppercase\leftmark}
+\PassOptionsToPackage{normalem}{ulem}
+\makeindex
+\makeatletter
+
+    \setlength{\headheight}{15pt}
+    %\numberwithin{figure}{section}
+    \renewcommand{\baselinestretch}{1}
+    \pagestyle{fancy}
+    \addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}}
+
+\makeatother
+
+    \newcommand{\tocandfigures}{
+    \rule[0ex]{1\columnwidth}{0.5pt}
+    \begin{flushright}
+    \textit{Last Revision: \today}
+    \end{flushright}
+    \noindent
+    \begin{flushleft}
+        \makeatletter
+        \makeatother
+        %\setcounter{page}{1}
+        %\setcounter{secnumdepth}{0} %Hide section number in header
+    \end{flushleft}
+    \tableofcontents
+    \noindent
+    \begin{flushleft}
+        \rule[0.5ex]{1\columnwidth}{.5pt}
+        \par
+    \end{flushleft}
+    \noindent
+    \begin{flushleft}
+        \newpage{}
+        \par
+    \end{flushleft}
+}
+%
+%
+%
+%
+    \newcommand{\doabstract}[1]{
+        \sectionmark{Abstract}
+        \begin{abstract}
+            \noindent
+            \textit{
+            #1
+            }
+        \end{abstract}
+    }
+
+%\setlength\parindent{0pt}
